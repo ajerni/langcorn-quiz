@@ -36,4 +36,4 @@ chat_prompt = ChatPromptTemplate.from_messages([system_message_prompt, human_mes
 chain = LLMChain(llm=chat, prompt=chat_prompt)
 
 if __name__ == "__main__":
-    print(chain.run(level="easy", thema="Switzerland", number_of_answers="2", set_nr=2, format_instructions=parser.get_format_instructions()))
+    print(chain.run(level="easy", thema="Switzerland", number_of_answers="2", set_nr=3, format_instructions=parser.get_format_instructions()))

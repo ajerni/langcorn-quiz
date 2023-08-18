@@ -1,4 +1,5 @@
 # run with: uvicorn main:app --reload
+# oder lokal mit: python quiz.py
 
 # https://www.youtube.com/watch?v=iFvCZD4iS2w&t=2s
 # https://github.com/msoedov/langcorn/

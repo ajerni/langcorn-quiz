@@ -1,3 +1,3 @@
 # Quiz Generator
 
-using langchain / openai / langcorn (FastAPI)
+using openai / langchain / langcorn --> FastAPI

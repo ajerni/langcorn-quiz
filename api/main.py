@@ -6,5 +6,5 @@
 from langcorn import create_service
 
 app = create_service(
-    "api.quiz:chain"
+    "quiz:chain"
 )

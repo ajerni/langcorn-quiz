@@ -11,6 +11,9 @@ from langchain.prompts.chat import (
 from langchain.schema import AIMessage, HumanMessage, SystemMessage
 from langchain.chains import LLMChain
 
+from dotenv import load_dotenv
+load_dotenv()
+
 class Quizset(BaseModel):
     set_nr: int = Field(description="Number of the Quiz-Set") 
     question: str = Field(description="A quiz question")
@@ -19,7 +22,7 @@ class Quizset(BaseModel):
 
 parser = PydanticOutputParser(pydantic_object=Quizset)
 
-os.environ['OPENAI_API_KEY'] =os.getenv("OPENAI_API_KEY")
+os.environ['OPENAI_API_KEY'] = os.environ.get('OPENAI_API_KEY')
 
 chat = ChatOpenAI(model='gpt-3.5-turbo', temperature=0)
 

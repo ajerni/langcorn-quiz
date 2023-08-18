@@ -1,14 +1,13 @@
-import openai, langchain, os, json
+import os
 from langchain.output_parsers import PydanticOutputParser
 from pydantic import BaseModel, Field
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts.chat import (
     ChatPromptTemplate,
     SystemMessagePromptTemplate,
-    AIMessagePromptTemplate,
     HumanMessagePromptTemplate,
 )
-from langchain.schema import AIMessage, HumanMessage, SystemMessage
+
 from langchain.chains import LLMChain
 
 from dotenv import load_dotenv
@@ -37,4 +36,4 @@ chat_prompt = ChatPromptTemplate.from_messages([system_message_prompt, human_mes
 chain = LLMChain(llm=chat, prompt=chat_prompt)
 
 if __name__ == "__main__":
-    print(chain.run(level="proficient", thema="astrology", number_of_answers="4", set_nr=3, format_instructions=parser.get_format_instructions()))
+    print(chain.run(level="easy", thema="Switzerland", number_of_answers="2", set_nr=2, format_instructions=parser.get_format_instructions()))
